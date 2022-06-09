@@ -41,7 +41,7 @@ const query = gql`
       }
     };
 
-export default function Home() {
+export default function Home({ posts }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -51,7 +51,9 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        
+        {posts.map((post) => (
+          <BlogCard title={post.title} author={post.author} coverPhoto={post.coverPhoto} key={post.id} datePublished={post.datePublished} slug={post.slug} />
+        ))}
       </main>
 
     </div>
