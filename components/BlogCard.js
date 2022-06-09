@@ -1,5 +1,6 @@
-import React from 'react'
-import Link from 'next/link'
+import React from 'react';
+import Link from 'next/link';
+import styles from '../styles/BlogCard.module.css';
 
 function BlogCard({ title, author, coverPhoto, datePublished, slug }) {
   return (
