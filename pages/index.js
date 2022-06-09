@@ -22,12 +22,7 @@ const query = gql`
         }
       }
       coverPhoto {
-        publishedAt {
-          createdAt {
-            id
-          }
-          url
-        }
+        url
       }
     }
     `;
