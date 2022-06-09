@@ -22,9 +22,10 @@ const query = gql`
         }
       }
       coverPhoto {
-        url
+        url,
       }
     }
+  }
     `;
 
     export async function getStaticProps() {
