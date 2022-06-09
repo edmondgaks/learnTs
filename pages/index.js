@@ -2,7 +2,34 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import { GraphQLClient,gql } from 'graphql-request';
 
-const graphcms = new GraphQLClient("https://api-eu-central-1.graphcms.com/v2/cl472djt32u1j01z3eg92gvb9/master")
+const graphcms = new GraphQLClient("https://api-eu-central-1.graphcms.com/v2/cl472djt32u1j01z3eg92gvb9/master");
+
+const query = gql`
+  query {
+    posts {
+      id,
+      title,
+      datePublished,
+      slug,
+      content {
+        html
+      }
+      author {
+        name,
+        avatar {
+          url
+        }
+      }
+      coverPhoto {
+        publishedAt {
+          createdAt {
+            id
+          }
+          url
+        }
+      }
+    }
+    `;
 
 export default function Home() {
   return (
