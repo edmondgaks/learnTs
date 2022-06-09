@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import { GraphQLClient,gql } from 'graphql-request';
+import BlogCard from '../components/BlogCard';
 
 const graphcms = new GraphQLClient("https://api-eu-central-1.graphcms.com/v2/cl472djt32u1j01z3eg92gvb9/master");
 
@@ -31,7 +32,7 @@ const query = gql`
     }
     `;
 
-    export default async function getStaticProps() {
+    export async function getStaticProps() {
       const {posts} = await graphcms.request(query);
       return {
         props: {
