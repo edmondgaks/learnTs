@@ -1,6 +1,8 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import { GraphQLClient,gql } from 'graphql-request';
+
+const graphcms = new GraphQLClient("https://api-eu-central-1.graphcms.com/v2/cl472djt32u1j01z3eg92gvb9/master")
 
 export default function Home() {
   return (
