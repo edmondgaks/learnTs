@@ -31,6 +31,16 @@ const query = gql`
     }
     `;
 
+    export default async function getStaticProps() {
+      const {posts} = await graphcms.request(query);
+      return {
+        props: {
+          posts,
+        },
+        revalidate: 10,
+      }
+    };
+
 export default function Home() {
   return (
     <div className={styles.container}>
