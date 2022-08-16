@@ -103,6 +103,13 @@ class Person implements PersonInterface {
 const brad = new Person(1,'Brad Traversy')
 const mike = new Person(2,'Mike Smith')
 
-console.log(brad.register())
+class Employee extends Person {
+    position: string
+    constructor(id: number,name: string,position: string) {
+        super(id,name)
+        this.position = position
+    }
+}
 
-brad.id = 5
+const emp = new Employee(3,'Shawn', 'Developer')
+console.log(emp.register())
