@@ -79,17 +79,30 @@ interface MathFunc {
     (x: number,y: number): number
 }
 const add: MathFunc = (x: number,y: number): number => x+ y
-const sub: MathFunc = (x: number,y: number): number => x - y 
+const sub: MathFunc = (x: number,y: number): number => x - y
+
+interface PersonInterface {
+    id: number 
+    name: string
+    register(): string
+}
 
 // Classes
 
-class Person {
-    id: number
+class Person implements PersonInterface {
+    public id: number
     name: string
     constructor(id: number,name: string) {
         this.id = id
         this.name = name
     }
+    register() {
+        return `${this.name} is now registered`
+    }
 }
 const brad = new Person(1,'Brad Traversy')
 const mike = new Person(2,'Mike Smith')
+
+console.log(brad.register())
+
+brad.id = 5
