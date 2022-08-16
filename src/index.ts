@@ -19,3 +19,23 @@ employee = [
     [2,'John'],
     [3,'Mary']
 ]
+
+// Union
+let pid: string | number
+pid = '123'
+
+// Enums 
+enum Direction1 {
+    Up=1,
+    down,
+    left,
+    right
+}
+
+
+enum Direction2 {
+    Up= 'Up',
+    down = 'Down',
+    left = 'Left',
+    right = 'Right'
+}
